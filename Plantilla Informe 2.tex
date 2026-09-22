@@ -43,14 +43,14 @@
 \rule{\textwidth}{0.5pt}
 
 \begin{tabular}{ll}
-    \textbf{Estudiantes:} & Nombre Apellido \\
-                          & Nombre Apellido \\
-                          & Nombre Apellido \\
-                          & Nombre Apellido \\[0.2cm]
-    \textbf{Profesora:}   & Nombre Apellido \\
-    \textbf{Ayudantes:}    & Nombre Apellido \\
-                           & Nombre Apellido\\[0.2cm]
-    \textbf{Fecha de entrega:} & DD de mes de AAAA
+    \textbf{Estudiantes:} & Juan Ortega \\
+                          & Daniel Vallejos \\
+                          & Benjamín Moraga \\
+                          & Benjamín Montenegro \\[0.2cm]
+    \textbf{Profesora:}   & Constanza Rivas \\
+    \textbf{Ayudantes:}    & Annelies Fullgraf \\
+                                      & Lixin Lai \\[0.2cm]
+    \textbf{Fecha de entrega:} & \today
 \end{tabular}
 
 \vspace{0.4cm}
@@ -62,50 +62,61 @@
 
 \subsection{Parte 1 - Mediciones experimentales y suma gráfica de vectores} \label{Procedimiento-Parte-1}
 
-Describan el procedimiento general utilizado para la realización de la medición de fuerzas y ángulos, la construcción de las configuraciones de equilibrio en la tabla de fuerzas y la representación gráfica de las fuerzas:
+El experimento realizado contaba con una tabla de fuerzas, una balanza, un plumón de pizarra, un resorte enganchado con un pasador rojo, tres cuerdas cortas enganchadas de un extremo al resorte y del otro extremo a unos discos de metal, dos dinamómetros y cuatro masas con gancho idénticas.
 
 \begin{enumerate}[label=\alph*)]
-\item cómo definieron el sistema de referencia para los ángulos;
-\item cómo realizaron las mediciones directas de las masas y los ángulos, con la resolución de los instrumentos;
-\item cómo realizaron las mediciones indirectas de las fuerzas $\vec{F}_1$;
-\item el procedimiento paso a paso para ajustar las tres configuraciones de equilibrio usando las cuerdas, poleas, resorte y dinamómetros;
-\item cómo construyeron la representación gráfica vectorial de los sistemas y el método del polígono (ya sea en papel milimetrado, software de edición o Python).
+
+\item Definimos un plano cartesiano de ejes $x$ e $y$, considerando el \textbf{primer cuadrante} en la esquina superior derecha. Tomando en cuenta el \textbf{sentido positivo} de los ángulos como el sentido \textbf{antihorario}. 
+\item \textbf{Los ángulos} fueron medidos con la tabla de fuerzas, sirviendo como marco de referencia junto con las cuerdas con las que se ejercía fuerza marcando bajo qué punto de la tabla terminaban las cuerdas; su resolución es $\Delta \theta$ = $5^{\circ}$ sexagesimales. \textbf{Las masas}, se midieron en una balanza de resolución $\Delta m = 0.00001 \,\mathrm{kg}$. 
+\item \textbf{Para las fuerzas}, llamamos $F_1$ a la magnitud de la fuerza peso de las masas, por lo tanto $F_1 = m \cdot g$, esto debido a que es la \textbf{fuerza responsable de deformar el resorte} en primer lugar; como la masas con gancho son iguales en forma y magnitud, variar la masa implica multiplicar por la cantidad de masas con gancho que se estén ocupando.
+\item Para las tres configuraciones desenganchamos el resorte quitando el pasador rojo para que se deformara por las fuerzas, pero dejándolo aún dentro del resorte para que no sufriera una \textbf{deformación permanente}; mantuvimos fija la fuerza $\vec{F}_1$ al eje $x$ que consideramos positivo \textbf{solo variando la cantidad de masas}; las otras dos fuerzas ($\vec{F}_2$ y $\vec{F}_3$) las medimos con dinamómetros de resolución $\Delta F = 0.01 \,\mathrm{N}$ enganchándolos a los otros anillos,  variando la dirección y el módulo de las fuerzas \textbf{hasta que el pasador volviera a enganchar el resorte}. Ese enganche es el equilibrio de las fuerzas y esas fuerzas \textbf{medidas inmediatamente después} de alcanzar el equilibrio fueron consideradas.
+\item Después, usamos dos planos cartesianos en una hoja cuadriculada que coincidieran con el sistema de referencia planteado para los ángulos de las fuerzas por cada configuración, ambos ejes en {\em{Newtons}} ($\mathrm{N}$) con una \textbf{misma escala} $1 \,\mathrm{N}$ para no tener gráficos demasiado grandes y al mismo tiempo que se \textbf{apreciaran bien} los vectores. En el primer gráfico todos los vectores iniciando desde \textbf{el origen}, mientras que en el segundo, solo $\vec{F}_1$ empieza desde el origen, $\vec{F}_2$ comienza desde donde termina $\vec{F}_1$ y $\vec{F}_3$ es la fuerza que finalmente cierra o no por completo el \textbf{polígono. no se consideraron sus errores absolutos}.
 \end{enumerate}
 
 \subsection{Parte 2 - Tratamiento analítico y propagación de error} \label{Procedimiento-Parte-2}
 
-Describan el desarrollo analítico utilizado para el cálculo de las componentes cartesianas de las fuerzas y sus respectivas incertidumbres absolutas.
+Llamamos $F_x$ y $F_y$ a las \textbf{componentes} $x$ e $y$ de las fuerzas respectivamente; para su error absoluto, propagamos el error con \textbf{derivadas parciales} como con cualquier magnitud indirecta, con la diferencia de que $\Delta \theta$ fue convertido a \textbf{radianes} con la relación {\large{$1 \,\mathrm{rad} = \frac{180^{\circ}}{\pi}$}} debido a que las funciones trigonométricas están definidas en radianes. 
 
 Para las componentes $x$:
 \begin{align*}
 F_x &= F \cos\theta \\
-\Delta F_x &= \sqrt{\left(\frac{\partial F_x}{\partial F}\delta F\right)^2 + \left(\frac{\partial F_x}{\partial \theta}\delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\cos\theta \, \Delta F\right)^2 + \left(-F\sin\theta \, \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
+\Delta F_x &= \sqrt{\left(\frac{\partial F_x}{\partial F}\Delta F\right)^2 + \left(\frac{\partial F_x}{\partial \theta}\Delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\cos\theta \, \Delta F\right)^2 + \left(-F\sin\theta \, \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
 \end{align*}
 
 Para las componentes $y$:
 \begin{align*}
     F_y &= F \sin\theta \\
-    \Delta F_y &= \sqrt{\left(\frac{\partial F_y}{\partial F}\delta F\right)^2 + \left(\frac{\partial F_y}{\partial \theta}\delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\sin\theta \, \Delta F\right)^2 + \left(F\cos\theta \, \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
+    \Delta F_y &= \sqrt{\left(\frac{\partial F_y}{\partial F}\Delta F\right)^2 + \left(\frac{\partial F_y}{\partial \theta}\Delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\sin\theta \, \Delta F\right)^2 + \left(F\cos\theta \, \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
 \end{align*}
 
-Asimismo, detallen la forma analítica de calcular las componentes del vector resultante $\vec{R}_{\text{exp}}$ y sus incertidumbres $\Delta R_x$ y $\Delta R_y$:
+El vector resultante ($\vec{R}$) resulta de la \textbf{suma vectorial} de las fuerzas, las separamos en sus componentes $x$ e $y$ para definir $R_x$ y $R_y$ las \textbf{componentes} de $\vec{R}$, quedando:
+
 \begin{align*}
 R_x &= F_{1x} + F_{2x} + F_{3x}, \qquad \Delta R_x = \sqrt{\Delta F_{1x}^2 + \Delta F_{2x}^2 + \Delta F_{3x}^2} \\
 R_y &= F_{1y} + F_{2y} + F_{3y}, \qquad \Delta R_y = \sqrt{\Delta F_{1y}^2 + \Delta F_{2y}^2 + \Delta F_{3y}^2}
 \end{align*}
 
+Para el caso de $F_1$, su error no está asociado a ningún dinamómetro sino a una propagación de errores de modo que:
+
+\begin{align*}
+    F_1 &= m g \\
+    \Delta F_1 &= \sqrt{\left(\frac{\partial F_1}{\partial m}\Delta m\right)^2 + \left(\frac{\partial F_1}{\partial g}\Delta g\right)^2} = \sqrt{\left(g \, \Delta m\right)^2 + \left(m \, \Delta g\right)^2}
+\end{align*}
 \subsection{Parte 3 - Comparación con la predicción teórica y análisis gráfico} \label{Procedimiento-Parte-3}
 
-Describan cómo construyeron el gráfico de puntos con barras de error para las componentes de los vectores resultantes y cómo lo interpretaron:
+Los gráficos de los vectores resultantes $R_x$ y $R_y$ se hicieron en Python teniendo en cuenta cosas como:
 
 \begin{enumerate}[label=\alph*)]
-\item cómo definieron las variables de los ejes y sus escalas;
-\item cómo incorporaron las barras de error en el gráfico;
-\item cómo trazaron la línea de referencia teórica ($y = 0\,\mathrm{N}$) y qué significa;
-\item el criterio utilizado para determinar si el resultado es compatible con el equilibrio.
+\item El eje $x$ se definió como una \textbf{lista} de los elementos $R_x$ y $R_y$, mostrando los errores de cada componente por separado sin problemas \textbf{(variable independiente)}. Los puntos del eje $y$ representan los valores que pueden tomar las componentes resultantes en N \textbf{(variable dependiente)}; la escala en $y$ no es la misma en cada configuración puesto que los vectores resultantes y sus errores variaban, no obstante, se mantuvo la misma separación por puntos y todos los gráficos incluyen el punto $y = 0 \,\mathrm{N}$.
+\item Con Python, nos apoyamos de \textbf{plt.errorbar()} y definimos el valor medido y el error \textbf{(y, yerr respectivamente)} como listas de dos elementos, con el objeto de que coincidan para $R_x$ y $R_y$.
+\item En la misma línea de comandos, ingresamos una \textbf{recta constante} definida desde $R_x$ hasta $R_y$ de modo que sus imágenes tomaran valores $y = 0 \,\mathrm{N}$ para cada punto. Dicha recta visualiza si el vector resultante \textbf{pasa por el $0 \mathrm{N}$ o no}, lo cual significa el equilibrio de fuerzas.
+\item Si $R_x$ y $R_y$ pasan por la recta, los resultados son \textbf{compatibles} con el equilibrio, esto a causa de que sus valores se encuentran en sus rangos de error ($x = \bar{x} \pm \Delta x$), por lo tanto se puede considerar que el el vector resultante $\vec{R}$ es un vector \textbf{nulo}.
 \end{enumerate}
 
 \newpage
+
+% Fin parte 1 _______________________________________________________________________________________________________________________________________________________________
+
 \section{Configuración de Equilibrio 1}
 
 Describan brevemente la primera configuración de equilibrio, considerando la cantidad de masas suspendidas, la disposición de los dinamómetros y los ángulos seleccionados.
