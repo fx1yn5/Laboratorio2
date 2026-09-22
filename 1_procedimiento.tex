@@ -1,0 +1,24 @@
+\section{Procedimiento experimental}\subsection{Parte 1 - Mediciones experimentales y suma gráfica de vectores} \label{Procedimiento-Parte-1}Describan el procedimiento general utilizado para la realización de la medición de fuerzas y ángulos, la construcción de las configuraciones de equilibrio en la tabla de fuerzas y la representación gráfica de las fuerzas:\begin{enumerate}[label=\alph*)]
+\item cómo definieron el sistema de referencia para los ángulos;
+\item cómo realizaron las mediciones directas de las masas y los ángulos, con la resolución de los instrumentos;
+\item cómo realizaron las mediciones indirectas de las fuerzas $\vec{F}_1$;
+\item el procedimiento paso a paso para ajustar las tres configuraciones de equilibrio usando las cuerdas, poleas, resorte y dinamómetros;
+\item cómo construyeron la representación gráfica vectorial de los sistemas y el método del polígono (ya sea en papel milimetrado, software de edición o Python).
+\end{enumerate}\subsection{Parte 2 - Tratamiento analítico y propagación de error} \label{Procedimiento-Parte-2}Describan el desarrollo analítico utilizado para el cálculo de las componentes cartesianas de las fuerzas y sus respectivas incertidumbres absolutas.Para las componentes $x$:
+\begin{align*}
+F_x &= F \cos\theta \
+\Delta F_x &= \sqrt{\left(\frac{\partial F_x}{\partial F}\delta F\right)^2 + \left(\frac{\partial F_x}{\partial \theta}\delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\cos\theta , \Delta F\right)^2 + \left(-F\sin\theta , \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
+\end{align*}Para las componentes $y$:
+\begin{align*}
+F_y &= F \sin\theta \
+\Delta F_y &= \sqrt{\left(\frac{\partial F_y}{\partial F}\delta F\right)^2 + \left(\frac{\partial F_y}{\partial \theta}\delta \theta_{\text{rad}}\right)^2} = \sqrt{\left(\sin\theta , \Delta F\right)^2 + \left(F\cos\theta , \left(\Delta \theta \frac{\pi}{180^\circ}\right)\right)^2}
+\end{align*}Asimismo, detallen la forma analítica de calcular las componentes del vector resultante $\vec{R}_{\text{exp}}$ y sus incertidumbres $\Delta R_x$ y $\Delta R_y$:
+\begin{align*}
+R_x &= F_{1x} + F_{2x} + F_{3x}, \qquad \Delta R_x = \sqrt{\Delta F_{1x}^2 + \Delta F_{2x}^2 + \Delta F_{3x}^2} \
+R_y &= F_{1y} + F_{2y} + F_{3y}, \qquad \Delta R_y = \sqrt{\Delta F_{1y}^2 + \Delta F_{2y}^2 + \Delta F_{3y}^2}
+\end{align*}\subsection{Parte 3 - Comparación con la predicción teórica y análisis gráfico} \label{Procedimiento-Parte-3}Describan cómo construyeron el gráfico de puntos con barras de error para las componentes de los vectores resultantes y cómo lo interpretaron:\begin{enumerate}[label=\alph*)]
+\item cómo definieron las variables de los ejes y sus escalas;
+\item cómo incorporaron las barras de error en el gráfico;
+\item cómo trazaron la línea de referencia teórica ($y = 0\,\mathrm{N}$) y qué significa;
+\item el criterio utilizado para determinar si el resultado es compatible con el equilibrio.
+\end{enumerate}

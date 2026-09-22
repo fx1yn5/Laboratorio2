@@ -1,0 +1,92 @@
+\documentclass[12pt,a4paper]{article}
+% 12pt:     Tamaño de fuente
+% a4papper: Tamaño de papel
+% article:  Formato artículo, está dividido por secciones y subsecciones. Otros formatos: report, letter, book, etc.
+
+\usepackage[spanish, es-tabla]{babel}
+% Configura en español los nombres de figuras, tablas, etc.
+\usepackage[utf8]{inputenc}                 % Permite el uso directo de tildes y otros.
+\usepackage{amsmath,amssymb}
+% Añade símbolos matemáticos para las ecuaciones.
+\usepackage{parskip}
+% Elimina la sangría
+\usepackage{geometry}
+% Permite modificar los márgenes de la página a gusto.
+\usepackage{multicol}
+% Ordena el cuerpo del documento en 2 o más columnas.
+\usepackage{graphicx}
+% Para poner imágenes.
+\usepackage{enumitem}
+% Para modificar los tags de los enumerate.
+\usepackage{array}
+% Para ordenar texto y ecuaciones.
+\usepackage{url}
+% Permite usar url que redirigen a la página web.
+\usepackage{hyperref}
+% Permite que se puedan clickear las urls, citas y referencias.
+
+\spanishdecimal{.} % punto decimal
+\geometry{margin=2cm} % margenes de la hoja
+\renewcommand{\baselinestretch}{1.3} % tamaño de las filas de las tablas
+
+\newcommand{\uveci}{\hat{\imath}} % vector unitario i
+\newcommand{\uvecj}{\hat{\jmath}} % vector unitario j
+\newcommand{\uveck}{\hat{k}} % vector unitario k
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{INFORME N°2}}
+
+{\LARGE\textbf{Suma vectorial y equilibrio de fuerzas}}
+
+\rule{\textwidth}{0.5pt}
+
+\begin{tabular}{ll}
+    \textbf{Estudiantes:} & Nombre Apellido \\
+                          & Nombre Apellido \\
+                          & Nombre Apellido \\
+                          & Nombre Apellido \\[0.2cm]
+    \textbf{Profesora:}   & Nombre Apellido \\
+    \textbf{Ayudantes:}    & Nombre Apellido \\
+                           & Nombre Apellido\\[0.2cm]
+    \textbf{Fecha de entrega:} & DD de mes de AAAA
+\end{tabular}
+
+\vspace{0.4cm}
+\rule{\textwidth}{0.5pt}
+
+\end{center}
+
+% ==========================================
+% INCLUSIÓN DE LAS SECCIONES DEL INFORME
+% ==========================================
+
+\input{1_procedimiento.tex}
+\newpage
+
+\input{2_configuracion1.tex}
+\newpage
+
+\input{3_configuracion2.tex}
+\newpage
+
+\input{4_configuracion3.tex}
+\newpage
+
+\input{5_analisis.tex}
+
+% ==========================================
+
+\begin{thebibliography}{99}
+
+\bibitem{libro} Nombre del autor. \textit{Título del libro}. Año.
+
+\bibitem{apunte} Nombre del profesor. \textit{Nombre del curso}. Semestre y año en el que fue entregado el apunte.
+
+\bibitem{web} TikTok de @usuario. Disponible en: \url{https://www.tiktok.com/}.
+
+\end{thebibliography}
+
+\end{document}
+
